@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="A1">
+        <h3>The JavaScript <i>this</i> Keyword</h3>
+        <p id="object_value"></p>
+        <p id="function_value"></p>
+        <script>
+            var person = {
+                FirstName: "Codingal",
+                lastname: "Cody",
+                id: 5563,
+                fullName: function () {
+                    return this.FirstName + " " + this.lastname;
+                }
+            };
+            // Create a function:
+            function myFunction() {
+                return this;
+            }
+            // Display data from the object:
+            // this represents the person object
+            document.getElementById("object_value").innerHTML = person.fullName();
+            // Display data from the function:
+            // this represents the object that "owns" myFunction
+            document.getElementById("function_value").innerHTML = myFunction();
+        </script>
+    </div>
+    <div id="A2">
+        <h2>JavaScript Class</h2>
+        <p>How to use a JavaScript Class for Employees.</p>
+        <p id="employee1"></p>
+        <p id="employee2"></p>
+        <script>
+            // Creating an Employee class
+            class Employee {
+                constructor(name, yearJoined) {
+                    this.name = name;
+                    this.yearJoined = yearJoined;
+                }
+                // Method to calculate years worked
+                yearsWorked() {
+                    let date = new Date();
+                    return date.getFullYear() - this.yearJoined;
+                }
+            }
+
+            // Create two employee objects
+            let employee1 = new Employee("John", 2015);
+            document.getElementById("employee1").innerHTML =
+                "My name is " + employee1.name + ". I joined in " + employee1.yearJoined + ". And I have worked for " + employee1.yearsWorked() + " years.";
+
+            let employee2 = new Employee("Jane", 2019);
+            document.getElementById("employee2").innerHTML =
+                "My name is " + employee2.name + ". I joined in " + employee2.yearJoined + ". And I have worked for " + employee2.yearsWorked() + " years.";
+        </script>
+
+
+    </div>
+    <div id="A3">
+        <h2>JavaScript Class Inheritance</h2>
+        <p>Use the "extends" keyword to inherit all methods from another class.</p>
+        <p>Use the "super" method to call the parent's constructor function.</p>
+        <p id="details"></p>
+        <script>
+            // Base class for Watch
+            class Watch {
+                constructor(brand) {
+                    this.brand = brand;
+                }
+                present() {
+                    return 'I have a ' + this.brand + ' watch';
+                }
+            }
+
+            // Derived class for Rolex model
+            class RolexModel extends Watch {
+                constructor(brand, model) {
+                    super(brand);  // Calling the parent constructor
+                    this.model = model;
+                }
+                show() {
+                    return this.present() + ', it is a ' + this.model + ' model';
+                }
+            }
+
+            // Create a Rolex model object
+            let myRolex = new RolexModel("Rolex", "Submariner");
+            document.getElementById("details").innerHTML = myRolex.show();
+        </script>
+
+    </div>
+</body>
+
+</html>
