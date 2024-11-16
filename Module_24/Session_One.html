@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="A1">
+        <h3>JavaScript Data types</h3>
+        <script>
+            var a = 8;
+            var b = 10;
+            var c = 10;
+            var d = null;
+            var e; // undefined variable
+            document.write("a and b are equal : " + (a == b));
+            document.write("<br>");
+            document.write("b and c are equal : " + (b == c));
+            document.write("<br>");
+            document.write("The value of d is : " + d);
+            document.write("<br>");
+            document.write("The value of e is : " + e);
+        </script>
+    </div>
+    <!-- A2 -->
+    <div id="A2">
+        <h3>Declaring variables using let</h3>
+        <script>
+            var a = 10; // Here value of a is 10
+            var b = 8; // Here value of b is 8
+            var c = 6; // Here value of c is 6
+            {
+                let a = 2;
+                // Here value of a is 2 but only within the block
+                var b = 10;
+                // Here value of b is 10 inside and outside the block it will remain 10
+                const c = 8;
+                // Here value of c is 8 but only within the block
+                // const cannot be reassigned
+                // c=5;
+            }
+            document.write("The value of a is : " + a);
+            // let has block scope
+            document.write("<br>");
+            document.write("The value of b is : " + b);
+            // var does not have block scope
+            document.write("<br>");
+            document.write("The value of c is  : " + c);
+            // const has block scope
+        </script>
+    </div>
+    <div id="A3">
+        <p>Conditional Statements</p>
+        <button onclick="greeting()">Yes Sir</button>
+        <p id="Greet"></p>
+        <script>
+            function greeting() {
+                var tgreeting;
+                var time = new Date().getHours();
+
+                if (time >= 0 && time < 5) {
+                    tgreeting = "Good Night";
+                } else if (time >= 5 && time < 10) {
+                    tgreeting = "Good Morning";
+                } else if (time >= 10 && time < 15) {
+                    tgreeting = "Good Afternoon";
+                } else if (time >= 15 && time <= 24) {
+                    tgreeting = "Good Evening";
+                } else {
+                    tgreeting = "Invalid time"; // Handles invalid time values
+                }
+                document.getElementById("Greet").innerHTML = tgreeting;
+
+
+            }
+        </script>
+    </div>
+    <button onclick="back('MainFile.html')">Back To MainFile</button>
+    <script> function back(page) {
+            window.location.href = page;
+        }</script>
+</body>
+
+</body>
+
+</html>
