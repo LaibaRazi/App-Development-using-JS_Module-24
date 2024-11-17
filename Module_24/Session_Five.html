@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="A1">
+    <h2>Convert a JavaScript object into a JSON string, and send it to the server.</h2>
+    <p id="result"></p>
+    <script>
+      var myObj = { name: "Riya", age: 12, grade: 7 };
+      var myJSON = JSON.stringify(myObj); // converts object to JSON for sending data
+      var newObj = JSON.parse(myJSON); // converts JSON into object while receiving data 
+      document.getElementById("result").innerHTML = newObj.name;
+    </script>
+  </div>
+
+  <div id="A2">
+    <h2>JavaScript Callbacks</h2>
+    <p>Do a calculation and then display the result.</p>
+    <p id="Call"></p>
+    <script>
+      function mydisplayer(value) {
+        document.getElementById('Call').innerHTML = value;
+      }
+      function calculation(num1, num2, myCallback) {
+        let sum = num1 + num2;
+        myCallback(sum);
+      }
+      calculation(5, 5, mydisplayer);
+
+    </script>
+  </div>
+  <div id="A3">
+    <h2>JavaScript Promise</h2>
+    <p id="demo"></p>
+    <script>
+      function myDisplayer(some) {
+        document.getElementById("demo").innerHTML = some;
+      }
+      function sum(a, b) {
+        var sum = a + b;
+        myDisplayer(sum);
+      }
+      let myPromise = new Promise(function (myResolve, myReject) {
+        // producing code may take some time
+        let x = 0; // some code (try to change x to 5)
+
+        if (x == 0) {
+          myResolve("OK"); // when successfull
+        } else {
+          myReject("Error"); // when error
+        }
+      });
+      // consuming code - must wait for fullfilled promise
+      myPromise.then(
+        function (value) { sum(5, 5); }, // code is successfull
+        function (error) { sum(error); } // code is error
+      );
+    </script>
+  </div>
+  <button onclick="back('MainFile.html')">Back To MainFile</button>
+  <button onclick="back('ACP_5.html')">ACP</button>
+  <script> function back(page) {
+          window.location.href = page;
+      }
+      function aco(page) {
+          winddow.location.href = page;
+      }
+  </script>
+</body>
+
+</html>

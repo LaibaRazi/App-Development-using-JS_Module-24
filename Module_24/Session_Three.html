@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="A1">
+    <h2>JavaScript Array Sort Reverse</h2>
+    <p>The sort() method sorts an array alphabetically.</p>
+    <p>The reverse() method reverses the elements in an array.</p>
+    <button onclick="sortfunction()">Sort me</button>
+    <button onclick="reversefunction()">Reverse me</button>
+    <p id="result"></p>
+    <script>
+      // Create and display an array:
+      var fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("result").innerHTML = fruits;
+      function sortfunction() {
+        // First sort the array
+        fruits.sort();
+        document.getElementById("result").innerHTML = fruits;
+      }
+      function reversefunction() {
+        // Then reverse it:
+        fruits.reverse();
+        document.getElementById("result").innerHTML = fruits;
+      }
+    </script>
+
+  </div>
+  <div id="A2">
+    <h2>JavaScript Array Sort</h2>
+    <p>Click the button to sort the array in ascending order.</p>
+    <button onclick="ascending()">Ascending order</button>
+    <button onclick="descending()">Descending order</button>
+    <p id="result"></p>
+    <script>
+      var points = [40, 100, 1, 5, 25, 10];
+      document.getElementById("result").innerHTML = points;
+      function ascending() {
+        points.sort(function (a, b) { return a - b });
+        document.getElementById("result").innerHTML = points;
+      }
+      function descending() {
+        points.sort(function (a, b) { return b - a });
+        document.getElementById("result").innerHTML = points;
+      }
+    </script>
+  </div>
+  <div id="A3">
+    <p>Multiply every element in the array with 10:</p>
+    <p id="product_value"></p>
+    <script>
+      var numbers = [28, 6, 19, 95];
+
+      function myFunction(num) {
+        return num * 10;
+      }
+      var newarray = numbers.map(myFunction);
+      document.getElementById("product_value").innerHTML = newarray;
+    </script>
+  </div>
+  <button onclick="back('MainFile.html')">Back To MainFile</button>
+  <button onclick="back('ACP_3.html')">ACP</button>
+  <script> function back(page) {
+          window.location.href = page;
+      }
+      function aco(page) {
+          winddow.location.href = page;
+      }
+  </script>
+</body>
+
+</html>

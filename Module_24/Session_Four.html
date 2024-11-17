@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="A1">
+    <h2>The JavaScript String() Method</h2>
+
+    <p>The String() method can convert a number to a string.</p>
+
+    <p id="number_result"></p>
+    <p id="string_result"></p>
+
+    <script>
+      var x = 70;;
+      var y = 90;
+      document.getElementById("number_result").innerHTML = x + y;
+      document.getElementById("string_result").innerHTML = String(x) + String(y); // Does not add because it is a string it concatenates 
+    </script>
+  </div>
+  <div id="A2">
+    <h2>JavaScript String Methods</h2>
+
+    <p>Search a string for "doing", and display the position of the match and replace the word "how are" by "how are
+      you" and display</p>
+
+    <p id="search_result"></p>
+    <p id="replace_result"></p>
+
+    <script>
+      var str = "Hai hello how are doing for the day";
+      var search_position = str.search("doing");
+      var txt = str.replace("how are", "how are you")
+      document.getElementById("search_result").innerHTML = search_position;
+      document.getElementById("replace_result").innerHTML = txt;
+    </script>
+  </div>
+  <div id="A3">
+    <h2>JavaScript Error Handling</h2>
+
+    <p>This example demonstrates how to use <b>catch</b> to diplay an error.</p>
+
+    <p id="error_message"></p>
+
+    <script>
+      try {
+        addalert("Welcome guest!");
+      }
+      catch (err) {
+        document.getElementById("error_message").innerHTML = err.message;
+      }
+    </script>
+  </div>
+  <button onclick="back('MainFile.html')">Back To MainFile</button>
+  <button onclick="back('ACP_4.html')">ACP</button>
+  <script> function back(page) {
+          window.location.href = page;
+      }
+      function aco(page) {
+          winddow.location.href = page;
+      }
+  </script>
+</body>
+
+</html>

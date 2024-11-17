@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+    
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            else document.write("Name submitted");
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="A1">
+        <form name="myForm" onsubmit="validateForm()">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+            <p id="message"></p>
+        </form>
+    </div>
+    <div id="A2">
+        <p>Enter a number and click OK:</p>
+        <input id="id1" type="number" min="100" max="300" required>
+        <button onclick="myFunction()">OK</button>
+        <p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+        <p id="obj"></p>
+        <script>
+          function myFunction() {
+            var inpObj = document.getElementById("id1");
+            if (!inpObj.checkValidity()) {
+              document.getElementById("obj").innerHTML = inpObj.validationMessage;
+            } else {
+              document.getElementById("obj").innerHTML = "Input OK";
+            } 
+          } 
+        </script>
+    </div>
+    
+    <div id="A3">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Calculator</h1>
+            <div class="row">
+                <input type="text" class="result" id="result" placeholder="Result" readonly />
+            </div>
+            <div class="row">
+                <input type="button" value="1" onclick="setScreenValue(1)" />
+                <input type="button" value="2" onclick="setScreenValue(2)" />
+                <input type="button" value="3" onclick="setScreenValue(3)" />
+                <input type="button" value="+" onclick="setScreenValue('+')" />
+            </div>
+            <div class="row">
+                <input type="button" value="4" onclick="setScreenValue(4)" />
+                <input type="button" value="5" onclick="setScreenValue(5)" />
+                <input type="button" value="6" onclick="setScreenValue(6)" />
+                <input type="button" value="-" onclick="setScreenValue('-')" />
+            </div>
+            <div class="row">
+                <input type="button" value="7" onclick="setScreenValue(7)" />
+                <input type="button" value="8" onclick="setScreenValue(8)" />
+                <input type="button" value="9" onclick="setScreenValue(9)" />
+                <input type="button" value="x" onclick="setScreenValue('*')" />
+            </div>
+            <div class="row">
+                <input type="button" value="%" onclick="setScreenValue('%')" />
+                <input type="button" value="0" onclick="setScreenValue(0)" />
+                <input type="button" value="." onclick="setScreenValue('.')" />
+                <input type="button" value="/" onclick="setScreenValue('/')" />
+            </div>
+            <div class="row">
+                <input type="button" value="CLEAR" onclick="clearScreen()" />
+                <input type="button" value="=" onclick="calculateResult()" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Clears the screen
+        function clearScreen() {
+            document.getElementById("result").value = "";
+        }
+
+        // Sets the value on the screen
+        function setScreenValue(value) {
+            document.getElementById("result").value += value;
+        }
+
+        // Calculates the result
+        function calculateResult() {
+            const screenValue = document.getElementById("result").value;
+            try {
+                const result = eval(screenValue); // Evaluate the string expression
+                document.getElementById("result").value = result;
+            } catch (error) {
+                document.getElementById("result").value = "Error";
+            }
+        }
+    </script>
+    <br>
+    <br>
+     <button onclick="back('MainFile.html')">Back To MainFile</button>
+     <button onclick="back('ACP_6.html')">ACP</button>
+     <script> function back(page) {
+             window.location.href = page;
+         }
+         function aco(page) {
+             winddow.location.href = page;
+         }
+     </script>
+</body>
+</html>
+
+</body>
+
+</html>
